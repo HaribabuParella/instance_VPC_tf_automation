@@ -31,6 +31,7 @@ resource "google_compute_instance" "default" {
 
   network_interface {
     network = google_compute_network.custom-test.name
+    subnetwork = google_compute_subnetwork.network-with-private-secondary-ip-ranges.name
 
     access_config {
       // Ephemeral public IP
